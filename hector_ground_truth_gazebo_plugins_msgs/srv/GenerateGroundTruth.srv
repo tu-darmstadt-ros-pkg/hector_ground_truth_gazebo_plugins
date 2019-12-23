@@ -1,0 +1,19 @@
+# The center of the elevation map and the rotation
+geometry_msgs/Pose origin
+# The distance from which the ray is emitted
+float64 max_z_height
+# The maximum distance the ray may travel
+float64 truncation_distance
+# Map resolution in m/cell
+float64 resolution
+# Length in x-direction in cells
+int64 cells_x
+# Length in y-direction in cells
+int64 cells_y
+# Samples per cell dimension (actual samples is samples^2, because we make a samples*samples grid)
+int64 samples
+# Set to true if the resulting map should not be published additionally to being
+# returned as service response
+bool quiet
+---
+grid_map_msgs/GridMap map
