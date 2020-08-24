@@ -1,5 +1,7 @@
 # The center of the elevation map and the rotation
 geometry_msgs/Pose origin
+# Keep the original origin. If false the generated maps origin will be at 0,0,0
+bool keep_origin
 # The distance from which the ray is emitted
 float64 max_z_height
 # The maximum distance the ray may travel

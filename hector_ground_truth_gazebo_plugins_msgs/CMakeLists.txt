@@ -8,6 +8,11 @@ find_package(catkin REQUIRED COMPONENTS message_generation geometry_msgs grid_ma
 ################################################
 
 
+add_message_files(
+  FILES
+  ContactPointsStamped.msg
+)
+
 ## Generate services in the 'srv' folder
 add_service_files(
   FILES

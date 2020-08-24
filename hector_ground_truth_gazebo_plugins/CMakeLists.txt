@@ -10,7 +10,7 @@ find_package(GAZEBO REQUIRED)
 
 catkin_package(
   INCLUDE_DIRS include
-  LIBRARIES hector_ground_truth_gazebo_plugins
+  LIBRARIES hector_contact_points_publisher_plugin hector_elevation_map_ground_truth_plugin
   CATKIN_DEPENDS hector_ground_truth_gazebo_plugins_msgs
   DEPENDS GAZEBO
 )
@@ -28,14 +28,16 @@ include_directories(
 )
 
 ## Declare a C++ library
-add_library(${PROJECT_NAME}
-  src/elevation_map_ground_truth_plugin.cpp)
-target_link_libraries(${PROJECT_NAME} ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES})
+add_library(hector_contact_points_publisher_plugin src/contact_points_publisher_plugin.cpp)
+target_link_libraries(hector_contact_points_publisher_plugin ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES})
+
+add_library(hector_elevation_map_ground_truth_plugin src/elevation_map_ground_truth_plugin.cpp)
+target_link_libraries(hector_elevation_map_ground_truth_plugin ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES})
 
 #############
 ## Install ##
 #############
 
- install(TARGETS ${PROJECT_NAME}
+ install(TARGETS hector_contact_points_publisher_plugin hector_elevation_map_ground_truth_plugin
    LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
  )
